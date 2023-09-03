@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Roobert";
+  src: url("../assets/fonts/Roobert-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("../assets/fonts/Rebond Grotesque.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("../assets/fonts/Rebond Grotesque Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("../assets/fonts/Rebond Grotesque Bold Italic.otf") format("opentype");
+  font-weight: bold;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("../assets/fonts/Rebond Grotesque Extrabold.otf") format("opentype");
+  font-weight: bolder;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("../assets/fonts/Rebond Grotesque Medium.otf") format("opentype");
+  font-weight: medium;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Rebond Grotesque";
+  src: url("../assets/fonts/Rebond Grotesque Light.otf") format("opentype");
+  font-weight: light;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+.orange {
+  color: #F14F24;
+}
+
+.black {
+  color: black;
+}
+
+.white {
+  color: white;
+}
+
+.red {
+  background-color: red;
+}
+
+.b-black {
+  background-color: black;
+  padding: 1vh 1vw;
+}
+
+.b-bone {
+  background-color: #FFFCF2;
+}
+
+.logo-color {
+  color: #F14F24;
+}
+
+.logo-text {
+  font-family: "Rebond Grotesque";
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.navbar-nav {
+  text-align: center;
+}
+
+.title {
+  font-family: "Rebond Grotesque";
+  font-weight: bold;
+  font-size: 5rem;
+  margin: 5vh 0 5vh 0;
+}
+
+.subtitle {
+  font-weight: bold;
+  padding: 1vh 1vw;
+  margin: 5vh 0 5vh 0;
+}
+
+.input-task {
+  font-family: "Roobert";
+  font-size: 1.5rem;
+  width: 30vw;
+  border: 1px solid black;
+  padding: 1vh 1vw;
+  text-align: left;
+  border-radius: 30px;
+  outline: none;
+}
+
+.add-task {
+  border: none;
+  border-radius: 40px;
+  background-color: white;
+}
+.add-task .plus-circle {
+  color: #F14F24;
+  font-size: 3.5rem;
+}
+
+.circle {
+  font-size: 2rem;
+}
+
+.completed {
+  text-decoration: line-through;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.task-text {
+  margin: 0;
+  flex-grow: 1; /* El texto ocupará todo el espacio restante */
+  padding-left: 10px;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  text-align: left;
+  font-family: "Roobert";
+  font-size: 2rem;
+}/*# sourceMappingURL=styles.css.map */

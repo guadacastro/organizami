@@ -1,0 +1,19 @@
+.logo-color {
+    color: map-get($colors, orange );
+}
+
+
+.logo-text {
+    font-family: map-get($font-families, title);
+    font-weight: bold;
+    font-size: map-get($font-sizes, h2);
+}
+
+.navbar-nav {
+    // margin-left: 20vw;
+    text-align: center;
+
+}
+
+
+

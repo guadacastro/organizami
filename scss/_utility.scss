@@ -1,0 +1,25 @@
+.orange {
+    color: map-get($colors, orange );
+}
+
+.black {
+    color: map-get($colors, black );
+}
+
+.white {
+    color: white
+}
+
+.red {
+    background-color: red;
+}
+
+.b-black {
+    background-color: black;
+    padding: 1vh 1vw;
+}
+
+
+.b-bone {
+    background-color: map-get($colors, bone);
+}
