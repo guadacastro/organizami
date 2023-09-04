@@ -75,3 +75,12 @@
     
   }
 
+  @media (min-width: 375px) and (max-width: 1024px) {
+    .logo-text {
+        font-size: 2rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+  }
