@@ -73,7 +73,7 @@ function createTask(text) {
     // console.log(p)
     // console.log(icon1)
     // console.log(icon2)
-    // console.log(taskItem)
+    console.log(taskItem)
 
     taskList.appendChild(taskItem);
 

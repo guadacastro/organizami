@@ -58,6 +58,31 @@
     text-decoration: none;
 }
 
+// .task-list {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center; /* Alinea horizontalmente en el centro */
+//     justify-content: start; /* Alinea verticalmente en el centro */
+//     // margin-top: 20px; /* Espacio en la parte superior */
+//     // margin-bottom: 20px; /* Espacio en la parte inferior */
+// }
+
+// #task-list {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center; /* Alinea verticalmente en el centro */
+//     margin-left: 3vw;
+   
+// }
+
+.task-row {
+    display: flex;
+    justify-content: space-between; /* Coloca los íconos en las puntas */
+    align-items: center; /* Centra verticalmente los elementos */
+    
+}
+
+
 
 
 
@@ -198,8 +223,25 @@
         font-size: 1rem;
     }
 
+    .task-item {
+        
+    }
     .tasks-container {
-        margin-left: 2vw;
+        
+    }
+
+    .task-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        border: 1px solid rgb(221, 221, 221, 0.4);
+        border-radius: 30px;
+      
+        padding: 10px;
+        margin-bottom: 10px;
+        overflow: hidden; 
+        max-width: 100%; 
     }
 
   }

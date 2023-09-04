@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Roobert";
   src: url("../assets/fonts/Roobert-Regular.ttf") format("truetype");
@@ -200,6 +201,12 @@ footer {
   text-decoration: none;
 }
 
+.task-row {
+  display: flex;
+  justify-content: space-between; /* Coloca los íconos en las puntas */
+  align-items: center; /* Centra verticalmente los elementos */
+}
+
 .task-item {
   display: flex;
   align-items: center;
@@ -298,8 +305,17 @@ footer {
   .icon-size {
     font-size: 1rem;
   }
-  .tasks-container {
-    margin-left: 2vw;
+  .task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid rgba(221, 221, 221, 0.4);
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    max-width: 100%;
   }
 }
 .footer {
