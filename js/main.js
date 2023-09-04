@@ -22,7 +22,9 @@ function addTask() {
 
 function createTask(text) {
     const taskList = document.getElementById('task-list');
-
+    const selectAllButton = document.getElementById('select-all-button');
+    selectAllButton.classList.remove('d-none');
+    
     const taskItem = document.createElement('div');
     taskItem.classList.add('task-item', 'row');
 
