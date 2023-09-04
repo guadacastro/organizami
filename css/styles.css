@@ -94,8 +94,9 @@ footer {
   height: 20vh;
 }
 
-.logo-color {
+.logo {
   color: #F14F24;
+  font-size: 3rem;
 }
 
 .logo-text {
@@ -112,6 +113,43 @@ footer {
   padding-left: 5vw;
 }
 
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CSS */
+  .logo-text {
+    font-size: 2.5rem;
+  }
+}
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  /* CSS */
+}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 390px) and (max-width: 844px) {
+  /* CSS */
+  .logo-text {
+    font-size: 1.5rem;
+  }
+  .logo {
+    font-size: 2.3rem;
+  }
+}
 .title {
   font-family: "Rebond Grotesque";
   font-weight: bold;
@@ -190,6 +228,77 @@ footer {
   text-overflow: ellipsis;
 }
 
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* CSS */
+  .add-task-container {
+    gap: 5vw;
+  }
+  .add-task-container .input-task {
+    width: 50vw;
+  }
+}
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* CSS */
+}
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  /* CSS */
+  .title {
+    font-size: 3rem;
+  }
+  .add-task-container {
+    gap: 5vw;
+  }
+  .add-task-container .input-task {
+    width: 50vw;
+    font-size: 1rem;
+    padding-left: 1vw;
+  }
+  .add-task-container .add-task .plus-circle {
+    font-size: 2.5rem;
+  }
+  .task-text {
+    font-size: 1.2rem;
+  }
+}
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 390px) and (max-width: 844px) {
+  /* CSS */
+  .title {
+    font-size: 3rem;
+  }
+  .add-task-container {
+    gap: 15vw;
+  }
+  .add-task-container .input-task {
+    width: 56vw;
+    font-size: 1rem;
+    padding-left: 4vw;
+  }
+  .add-task-container .add-task .plus-circle {
+    font-size: 2.5rem;
+  }
+  .task-text {
+    font-size: 1rem;
+  }
+  .icon-size {
+    font-size: 1rem;
+  }
+}
 .footer {
   position: absolute;
   bottom: 0;

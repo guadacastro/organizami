@@ -76,10 +76,10 @@
     max-width: 100%; 
 }
 
-.task-row {
+// .task-row {
 
 
-}
+// }
 
 .task-text {
     margin: 0;
@@ -96,4 +96,107 @@
     white-space: nowrap;
     text-overflow: ellipsis; 
 }
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    /* CSS */
+    .add-task-container {
+        gap: 5vw;
+        .input-task {
+            width: 50vw;
+        }
+      
+        
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+
+    /* CSS */
+    
+    .title {
+        font-size: map-get($font-sizes, h2);
+    }
+    .add-task-container {
+        gap: 5vw;
+        .input-task {
+            width: 50vw;
+            font-size: 1rem;
+            padding-left: 1vw;
+        }
+
+        .add-task {
+            .plus-circle {
+                font-size: 2.5rem;
+            }
+        }
+      
+        
+    }
+
+    .task-text {
+        font-size: 1.2rem;
+    }
+
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 390px) and (max-width: 844px) {
+    
+    /* CSS */
+  
+    .title {
+        font-size: map-get($font-sizes, h2);
+    }
+    .add-task-container {
+        gap: 15vw;
+        .input-task {
+            width: 56vw;
+            font-size: 1rem;
+            padding-left: 4vw;
+        }
+
+        .add-task {
+            .plus-circle {
+                font-size: 2.5rem;
+            }
+        }
+      
+        
+    }
+
+    .task-text {
+        font-size: 1rem;
+    }
+
+    .icon-size {
+        font-size: 1rem;
+    }
+
+  }
 

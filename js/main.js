@@ -32,16 +32,17 @@ function createTask(text) {
     taskRow.classList.add('task-row', 'd-flex' ,'justify-content-between', 'align-items-center', 'gap-5', 'text-center');
     
     let icon1 = document.createElement('i');
-    icon1.classList.add('fa-regular', 'fa-circle', 'circle', 'black');
+    icon1.classList.add('fa-regular', 'fa-circle', 'circle', 'black', 'icon-size');
 
     let p = document.createElement('p');
     p.textContent = text;
     p.classList.add('task-text','incomplete', 'black');
 
     const icon2 = document.createElement('i');
-    icon2.classList.add('fa-solid', 'fa-xmark', 'circle', 'orange');
+    icon2.classList.add('fa-solid', 'fa-xmark', 'circle', 'orange', 'icon-size');
 
 
+ 
 
     taskRow.appendChild(icon1);
     taskRow.appendChild(p);
