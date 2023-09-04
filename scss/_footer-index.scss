@@ -3,6 +3,13 @@
     bottom: 0;
     height: 15vh;
     width: 100%;
-   
+    display: flex;
 
+}
+
+.copyright {
+    color: map-get($colors, bone); 
+    font-family: map-get($font-families, subtitle);
+    text-align:start;
+    
 }
