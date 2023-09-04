@@ -298,6 +298,9 @@ footer {
   .icon-size {
     font-size: 1rem;
   }
+  .tasks-container {
+    margin-left: 2.5vw;
+  }
 }
 .footer {
   position: absolute;
