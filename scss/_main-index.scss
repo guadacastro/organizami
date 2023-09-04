@@ -1,8 +1,9 @@
+
 .title {
     font-family: map-get($font-families, title);
     font-weight: bold;
     font-size: map-get($font-sizes, big-title);
-    margin: 5vh 0 5vh 0;
+    margin: 10vh 0 5vh 0;
 }
 
 .subtitle {
@@ -20,7 +21,7 @@
 .input-task {
     font-family: map-get($font-families, subtitle);
     font-size: map-get($font-sizes, text);
-    width: 30vw;
+    width: 35vw;
     border: 1px solid black;
     padding: 1vh 1vw;
     text-align: left;
@@ -36,7 +37,14 @@
         color: map-get($colors, orange);
         font-size: 3.5rem;
     }
+
+    .plus-circle:hover{
+        box-shadow: 0 0 11px rgba(33,33,33,.4);
+        border-radius: 40px; 
+    }
 }
+
+
 
 .circle{
     font-size: 2rem;
@@ -46,6 +54,11 @@
     text-decoration: line-through;
 }
 
+.incomplete {
+    text-decoration: none;
+}
+
+
 
 
 
@@ -54,11 +67,13 @@
     align-items: center;
     justify-content: space-between;
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid rgb(221, 221, 221, 0.4);
     border-radius: 30px;
   
     padding: 10px;
     margin-bottom: 10px;
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    max-width: 100%; 
 }
 
 .task-row {
@@ -77,5 +92,8 @@
     text-align: left;
     font-family: map-get($font-families, subtitle);
     font-size: map-get($font-sizes, big-text );
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto se desborda */
 }
 

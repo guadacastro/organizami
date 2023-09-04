@@ -74,6 +74,26 @@
   background-color: #FFFCF2;
 }
 
+.b-orange {
+  background-color: #F14F24;
+}
+
+main {
+  min-height: calc(100vh - 100px); /* 100px es la altura estimada del encabezado y el espacio en blanco entre el contenido principal y el footer */
+}
+
+/* Estiliza el footer */
+footer {
+  background-color: #F14F24;
+  padding: 20px;
+  text-align: center;
+  position: static;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-top: 20vh; /* Agrega espacio en blanco entre el footer y el contenido principal */
+}
+
 .logo-color {
   color: #F14F24;
 }
@@ -88,11 +108,15 @@
   text-align: center;
 }
 
+.x {
+  padding-left: 5vw;
+}
+
 .title {
   font-family: "Rebond Grotesque";
   font-weight: bold;
   font-size: 5rem;
-  margin: 5vh 0 5vh 0;
+  margin: 10vh 0 5vh 0;
 }
 
 .subtitle {
@@ -104,7 +128,7 @@
 .input-task {
   font-family: "Roobert";
   font-size: 1.5rem;
-  width: 30vw;
+  width: 35vw;
   border: 1px solid black;
   padding: 1vh 1vw;
   text-align: left;
@@ -121,6 +145,10 @@
   color: #F14F24;
   font-size: 3.5rem;
 }
+.add-task .plus-circle:hover {
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.4);
+  border-radius: 40px;
+}
 
 .circle {
   font-size: 2rem;
@@ -130,15 +158,21 @@
   text-decoration: line-through;
 }
 
+.incomplete {
+  text-decoration: none;
+}
+
 .task-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #fff;
-  border: 1px solid #ddd;
+  border: 1px solid rgba(221, 221, 221, 0.4);
   border-radius: 30px;
   padding: 10px;
   margin-bottom: 10px;
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  max-width: 100%;
 }
 
 .task-text {
@@ -151,4 +185,14 @@
   text-align: left;
   font-family: "Roobert";
   font-size: 2rem;
+  overflow: hidden; /* Oculta el contenido que se desborda */
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+  text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto se desborda */
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  height: 15vh;
+  width: 100%;
 }/*# sourceMappingURL=styles.css.map */

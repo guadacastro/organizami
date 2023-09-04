@@ -23,3 +23,23 @@
 .b-bone {
     background-color: map-get($colors, bone);
 }
+
+.b-orange {
+    background-color: map-get($colors, orange ); ;
+}
+
+main {
+    min-height: calc(100vh - 100px); /* 100px es la altura estimada del encabezado y el espacio en blanco entre el contenido principal y el footer */
+}
+
+/* Estiliza el footer */
+footer {
+    background-color: map-get($colors, orange);
+    padding: 20px;
+    text-align: center;
+    position: static;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-top: 20vh; /* Agrega espacio en blanco entre el footer y el contenido principal */
+}
