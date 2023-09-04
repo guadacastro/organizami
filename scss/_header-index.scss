@@ -1,5 +1,6 @@
-.logo-color {
+.logo {
     color: map-get($colors, orange );
+    font-size: 3rem;
 }
 
 
@@ -20,4 +21,57 @@
    padding-left: 5vw;
 }
 
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+    /* CSS */
+    .logo-text {
+        font-size: 2.5rem;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    /* CSS */
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 390px) and (max-width: 844px) {
+    
+    /* CSS */
+    .logo-text {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        font-size: 2.3rem;
+    }
+    
+    
+  }
 
