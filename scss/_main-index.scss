@@ -72,7 +72,7 @@
   
     padding: 10px;
     margin-bottom: 10px;
-    overflow: hidden; /* Oculta el contenido que se desborda */
+    overflow: hidden; 
     max-width: 100%; 
 }
 
@@ -83,7 +83,7 @@
 
 .task-text {
     margin: 0;
-    flex-grow: 1; /* El texto ocupará todo el espacio restante */
+    flex-grow: 1;
     padding-left: 10px; 
   
     align-items: center;
@@ -92,8 +92,8 @@
     text-align: left;
     font-family: map-get($font-families, subtitle);
     font-size: map-get($font-sizes, big-text );
-    overflow: hidden; /* Oculta el contenido que se desborda */
-    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
-    text-overflow: ellipsis; /* Agrega puntos suspensivos (...) si el texto se desborda */
+    overflow: hidden; 
+    white-space: nowrap;
+    text-overflow: ellipsis; 
 }
 

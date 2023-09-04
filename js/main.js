@@ -62,7 +62,6 @@ function createTask(text) {
             p.classList.replace('completed', 'incomplete');
             icon1.classList.add('black', 'orange');
         }
-        // También puedes agregar la lógica adicional aquí para marcar la tarea como completada
         // taskItem.classList.toggle('completed');
     });
 
@@ -70,10 +69,10 @@ function createTask(text) {
         taskItem.remove();
     });
    
-    console.log(p)
-    console.log(icon1)
-    console.log(icon2)
-    console.log(taskItem)
+    // console.log(p)
+    // console.log(icon1)
+    // console.log(icon2)
+    // console.log(taskItem)
 
     taskList.appendChild(taskItem);
 
@@ -84,7 +83,11 @@ function createTask(text) {
 
 function checkAll() {
     const taskItems = document.querySelectorAll('.task-item');
-    const selectAllIcon = document.getElementById('select-all')
+    const selectAllIcon = document.getElementById('select-all');
+
+    if (taskItems.length === 0) {
+        return;
+    }
 
     if (selectAllIcon.classList.contains("fa-circle")){
         selectAllIcon.classList.replace('fa-circle', 'fa-circle-check');
@@ -99,13 +102,16 @@ function checkAll() {
 
         if (icon1.classList.contains('fa-circle')) {
             icon1.classList.replace('fa-circle', 'fa-circle-check');
-            p.classList.add('completed', 'orange');
-            icon1.classList.add('orange');
+            p.classList.replace("incomplete", "completed");
+            p.classList.replace("black", "orange");
+            icon1.classList.replace("black", "orange");
 
         } else {
             icon1.classList.replace('fa-circle-check', 'fa-circle');
-            p.classList.remove('completed', 'orange');
-            icon1.classList.remove('orange');
+            p.classList.replace("completed", "incomplete");
+            p.classList.replace("orange", "black");
+            console.log(p)
+            icon1.classList.replace("orange", "black");
    
         }
 
