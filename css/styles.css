@@ -114,6 +114,14 @@ footer {
   padding-left: 5vw;
 }
 
+.navbar-toggler {
+  border-radius: 10px;
+}
+.navbar-toggler .navbar-toggler-icon {
+  font-size: 1rem;
+  color: #F14F24;
+}
+
 /* 
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px

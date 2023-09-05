@@ -20,6 +20,16 @@
 .x{
    padding-left: 5vw;
 }
+.navbar-toggler {
+    border-radius: 10px;
+    .navbar-toggler-icon {
+        font-size: 1rem;
+        color: map-get($colors, orange);
+    }
+
+}
+
+
 
 /* 
   ##Device = Tablets, Ipads (portrait)
