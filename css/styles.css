@@ -156,7 +156,15 @@ footer {
     font-size: 2rem;
   }
   .logo {
-    font-size: 2rem;
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 320px) and (max-width: 1024px) {
+  .logo-text {
+    font-size: 1.5rem;
+  }
+  .logo {
+    font-size: 1.5rem;
   }
 }
 .title {
@@ -358,6 +366,52 @@ footer {
   }
   .icon-size {
     font-size: 1.5rem;
+  }
+  .task-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border: 1px solid rgba(221, 221, 221, 0.4);
+    border-radius: 30px;
+    padding: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    max-width: 100%;
+  }
+  .tasks-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+  }
+  .task-item {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+@media (min-width: 320px) and (max-width: 1024px) {
+  /* CSS */
+  /* CSS */
+  .title {
+    font-size: 2rem;
+  }
+  .add-task-container {
+    gap: 7vw;
+  }
+  .add-task-container .input-task {
+    width: 70vw;
+    font-size: 0.8rem;
+    padding-left: 4vw;
+  }
+  .add-task-container .add-task .plus-circle {
+    font-size: 2.3rem;
+  }
+  .task-text {
+    font-size: 0.7rem;
+  }
+  .icon-size {
+    font-size: 1.3rem;
   }
   .task-item {
     display: flex;

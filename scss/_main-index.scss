@@ -324,3 +324,72 @@
     }
   }
   
+  @media (min-width: 320px) and (max-width: 1024px) {
+    
+    /* CSS */
+    /* CSS */
+  
+    .title {
+        font-size: map-get($font-sizes, big-text);
+    
+    }
+    .add-task-container {
+        gap: 7vw;
+        .input-task {
+            width: 70vw;
+            font-size: .8rem;
+            padding-left: 4vw;
+        }
+
+        .add-task {
+            .plus-circle {
+                font-size: 2.3rem;
+            }
+        }
+      
+        
+    }
+
+    .task-text {
+        font-size: .7rem;
+    }
+
+    .icon-size {
+        font-size: 1.3rem;
+    }
+
+    .task-item {
+        
+    }
+    .tasks-container {
+        
+    }
+
+    .task-item{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: #fff;
+        border: 1px solid rgb(221, 221, 221, 0.4);
+        border-radius: 30px;
+      
+        padding: 10px;
+        margin-bottom: 10px;
+        overflow: hidden; 
+        max-width: 100%; 
+    }
+//prueba
+    .tasks-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+    }
+    .task-item {
+        width: 100%;
+        max-width: 100%;
+    }
+  }
+  
+
+  
