@@ -22,6 +22,8 @@
 }
 .navbar-toggler {
     border-radius: 10px;
+    padding-top: .6vh;
+    padding-bottom: .6vh;
     .navbar-toggler-icon {
         font-size: 1rem;
         color: map-get($colors, orange);

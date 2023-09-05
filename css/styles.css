@@ -116,6 +116,8 @@ footer {
 
 .navbar-toggler {
   border-radius: 10px;
+  padding-top: 0.6vh;
+  padding-bottom: 0.6vh;
 }
 .navbar-toggler .navbar-toggler-icon {
   font-size: 1rem;
