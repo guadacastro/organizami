@@ -55,17 +55,34 @@
             <div class="col-xl-11">
                 <input class="input-task " type="text" id="input-task" placeholder="Enter your text here...">
             </div>
-            <div class="col-xl-1 d-flex justify-content-start button-add-task-container ">
+            <div class="col-xl-1 d-flex justify-content-start button-add-task-container">
                 <button class="add-task" onclick="addTask()">
                     <i class="plus-circle fa-solid fa-circle-plus"></i>
                 </button>
             </div>
+            <!-- <div class="col-xl-1 d-flex justify-content-start pomodoro-contanier">
+                <button class="pomodoro-button">
+                    <i class="pomodoro-icon fa-solid fa-stopwatch"></i>
+                </button>
+            </div> -->
 
         </div>
-        <div class="container add-task-container ">
-            <button class="add-task m-2 d-none" onclick="checkAll()" id="select-all-button" >
-                <i class="select-all-unchecked plus-circle fa-regular fa-circle" id="select-all"></i>
-            </button>
+        <div class="container add-task-container d-flex ">
+            <div class="col-xl-1 ">
+                <button class="add-task m-2 d-none" onclick="checkAll()" id="select-all-button" >
+                    <i class="select-all-unchecked plus-circle fa-regular fa-circle" id="select-all"></i>
+                </button>
+            </div>
+            <!-- <div class="col-xl-1 d-flex justify-content-start pomodoro-contanier">
+                <button class="pomodoro-button" onclick="togglePomodoro()">
+                    <i class="pomodoro-icon fa-solid fa-stopwatch"></i>
+                </button>
+            </div> -->
+            <!-- <div class="col-xl-1 align-self-center justify-content-center">
+                <span id="pomodoro-timer">25:00</span>
+            </div>
+            <div id="pomodoro-message"></div> -->
+
         </div>
         <div id="task-list" class="container tasks-container d-flex flex-column justify-content-center  flex-nowrap mt-5 mb-5  ">
 
@@ -86,6 +103,7 @@
 
 
     <script src="./js/bootstrap.min.js" ></script>
+    
     <script src="./js/main.js"></script>
 </body>
 </html>

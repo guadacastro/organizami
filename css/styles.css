@@ -215,6 +215,18 @@ footer {
   border-radius: 40px;
 }
 
+.pomodoro-contanier .pomodoro-button {
+  border: none;
+  background-color: white;
+}
+.pomodoro-contanier .pomodoro-button .pomodoro-icon {
+  font-size: 3.5rem;
+  color: #F14F24;
+}
+.pomodoro-contanier .pomodoro-button:hover .pomodoro-icon {
+  color: black;
+}
+
 .circle {
   font-size: 2rem;
 }

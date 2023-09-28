@@ -45,6 +45,23 @@
 }
 
 
+.pomodoro-contanier {
+    .pomodoro-button {
+        border: none;
+        background-color: white;
+        .pomodoro-icon {
+            font-size: 3.5rem;
+            color: map-get($colors, orange)
+        }
+    }
+
+    .pomodoro-button:hover {
+        .pomodoro-icon{
+            color: map-get($colors, black );
+        }
+    }
+}
+
 
 .circle{
     font-size: 2rem;
@@ -57,6 +74,8 @@
 .incomplete {
     text-decoration: none;
 }
+
+
 
 // .task-list {
 //     display: flex;
@@ -286,12 +305,14 @@
         font-size: .9rem;
     }
 
-    .task-item {
+
+
+    // .task-item {
         
-    }
-    .tasks-container {
+    // }
+    // .tasks-container {
         
-    }
+    // }
 
     .task-item{
         display: flex;
