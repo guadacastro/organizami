@@ -11,7 +11,7 @@
 <body class="bone">
     
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light ">
+        <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container ">
                 <div class="d-flex gap-3 justify-content-center align-self-center align-items-center">
                     <i class="fas fa-dot-circle logo"></i>   
@@ -23,13 +23,13 @@
                 <!-- eso estaba de clase en el span predeterminado de boostrap ==> navbar-toggler-icon -->
                 </button>
 
-                <div class="collapse navbar-collapse justify-content-start x" id="navbarNav">
-                    <ul class="navbar-nav ">
+                <div class="collapse navbar-collapse justify-content-start x d-flex flex-row align-items-center" id="navbarNav">
+                    <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">About</a>
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Make a list</a>
+                        <a class="nav-link" href="./pages/inbox.html">Inbox</a>
                         </li>
                         <li class="nav-item">
                         <a class="nav-link" href="./pages/features.html">Features</a>
@@ -37,8 +37,28 @@
                         <li class="nav-item">
                         <a class="nav-link" href="./pages/contact.html">Contact</a>
                         </li>
+                        <li class="nav-item dropdown align-self-center">
+                            <a class="nav-link dropdown-toggle pomodoro-text pomodoro-status" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Pomodoro
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                              <li><a class="dropdown-item" href="#" id="start-button">Play    <i id="start-icon" class="fa-solid fa-play" style="font-size: .9rem;"></i></a></li>
+                              <li><a class="dropdown-item" href="#" id="reset-button">Reset    <i class="fa-solid fa-rotate-right" style="font-size: .9rem;"></i></a></li>
+                            </ul>
+                        </li>
+                        <div class="nav-item d-flex flex-row ">
+                            <p class="nav-link align-self-center mb-0" id="pomodoro-timer"></p>
+                            <div class="nav-link d-flex flex-row align-items-center mb-0" id="pomodoro-message"></div>
+                        </div>
+                        
+                        
+                        
+                        
+                
                     </ul>
                 </div>
+                <button class="btn btn-outline-success" type="submit">Login</button>
+                <!-- <button class="btn btn-outline-success" type="submit">Sign Up</button> -->
             </div>
           </nav>
         
@@ -51,11 +71,11 @@
         <div class="container d-flex flex-column justify-content-center  text-center">
             <h1 class="subtitle"><span class="orange">Create</span> a To Do List : </h1>
         </div>
-        <div class="add-task-container container d-flex justify-content-center align-items-center text-center mt-5 mb-5  ">
-            <div class="col-xl-11">
+        <div class="add-task-container container d-flex justify-content-center align-items-center text-center mt-5 mb-5 gap-5 ">
+            <div class="col-xl-auto">
                 <input class="input-task " type="text" id="input-task" placeholder="Enter your text here...">
             </div>
-            <div class="col-xl-1 d-flex justify-content-start button-add-task-container">
+            <div class="col-xl-auto d-flex justify-content-start button-add-task-container">
                 <button class="add-task" onclick="addTask()">
                     <i class="plus-circle fa-solid fa-circle-plus"></i>
                 </button>

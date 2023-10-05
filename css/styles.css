@@ -70,6 +70,10 @@
   padding: 1vh 1vw;
 }
 
+.b-white {
+  background-color: white;
+}
+
 .b-bone {
   background-color: #FFFCF2;
 }
@@ -122,6 +126,13 @@ footer {
 .navbar-toggler .navbar-toggler-icon {
   font-size: 1rem;
   color: #F14F24;
+}
+
+.navbar-nav .nav-item .nav-link.pomodoro-text {
+  color: #F14F24;
+  border: 0.5px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 0.5vh 0.5vw;
 }
 
 /* 
@@ -442,4 +453,48 @@ footer {
   color: #FFFCF2;
   font-family: "Roobert";
   text-align: start;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.div1 {
+  grid-area: 1/1/2/2;
+}
+
+.div2 {
+  grid-area: 1/2/2/3;
+}
+
+.div3 {
+  grid-area: 1/3/2/4;
+}
+
+.div4 {
+  grid-area: 1/4/2/5;
+}
+
+.div5 {
+  grid-area: 1/5/2/6;
+}
+
+.div6 {
+  grid-area: 2/1/3/2;
+}
+
+.div7 {
+  grid-area: 3/1/4/2;
+}
+
+.div8 {
+  grid-area: 4/1/5/2;
+}
+
+.div9 {
+  grid-area: 5/1/6/2;
 }/*# sourceMappingURL=styles.css.map */

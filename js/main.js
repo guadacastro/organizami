@@ -1,3 +1,4 @@
+
 // Objeto Task para representar una tarea
 class Task {
     constructor(text) {
@@ -13,7 +14,8 @@ class Task {
   // Objeto TodoList para representar la lista de tareas
   class TodoList {
     constructor() {
-      this.tasks = [];
+        // Intenta cargar las tareas desde el Local Storage
+      this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
     }
   
     addTask(text) {
@@ -27,6 +29,11 @@ class Task {
       if (index !== -1) {
         this.tasks.splice(index, 1);
       }
+      taskList.saveTasks();
+    }
+
+    saveTasks() {
+        localStorage.setItem('tasks', JSON.stringify(this.tasks));
     }
 
   }
@@ -35,6 +42,15 @@ class Task {
 
   const input = document.getElementById('input-task');
   const taskList = new TodoList();
+
+  document.addEventListener('DOMContentLoaded', function() {
+    this.taskList = new TodoList();
+
+    this.taskList.tasks.forEach(task => {
+        createTaskElement(task);
+    });
+
+})
   
   input.addEventListener("keyup", function (event) {
       if (event.key === "Enter") {
@@ -55,8 +71,22 @@ class Task {
           console.log('[+] Tarea creada: ', task); 
       }
 
+      taskList.saveTasks();
       
   }
+
+//   function removeTask() {
+//         // Busca la tarea en el array de tareas y elimínala
+//     const index = taskList.tasks.indexOf(task);
+//     if (index !== -1) {
+//         taskList.tasks.splice(index, 1);
+//     }
+
+//     // Actualiza el Local Storage y remueve el elemento del DOM
+//     taskList.saveTasks();
+//     taskItem.remove();
+//     taskList.saveTasks();
+//   }
   
   function createTaskElement(task) {
       const taskListElement = document.getElementById('task-list');
@@ -151,4 +181,153 @@ class Task {
       });
   }
   
+
+
+
+//   pomodoroooo
+
+class PomodoroTimer {
+    constructor() {
+        this.pomodoroTime = 25 * 1; // 25 segundos
+        this.breakTime = 5 * 1; // 5 segundos
+        this.longBreakTime = 30 * 1; // 15 min en segundos
+        this.time = this.pomodoroTime; // tiempo actual
+        this.mode = 'pomodoro'; // modo actual
+        this.timerInterval = null;
+        this.isRunning = false;
+        this.intervalCount = 0; //contador de intervalos
+        this.maxIntervalCount = 5; // numero max de intervalos antes de cambiar a intervalos largos
+        this.updateDisplay();
+
+        // botones
+        this.startButton = document.getElementById('start-button');
+        
+        this.resetButton = document.getElementById('reset-button');
+
+        // eventos
+        this.startButton.addEventListener('click', () => this.toggleTimer()); 
+        this.resetButton.addEventListener('click', () => this.reset());
+    }
+
+    toggleTimer() {
+        this.startIcon = document.getElementById('start-icon');
+        
+        if (!this.isRunning) {
+            this.startIcon.classList.replace('fa-play', 'fa-pause');
+            
+            this.startTimer();
+        } else {
+            this.startIcon.classList.replace('fa-pause', 'fa-play');
+            this.stopTimer();
+        }
+    }
+
+    start() {
+        this.isRunning = true;
+        this.startTimer();
+    }
+
+    pause() {
+        this.isRunning = false;
+        this.stopTimer();
+    }
+
+    reset() {
+        const pomodoroStatus = document.getElementById('navbarDropdown');
+        pomodoroStatus.textContent = 'Pomodoro';
+        this.isRunning = false;
+        this.stopTimer();
+        this.startIcon.classList.replace('fa-pause', 'fa-play');
+        this.intervalCount = 0;
+        this.mode = 'pomodoro';
+        this.time = this.pomodoroTime;
+        // this.showMessage('Pomodoro time')
+        this.updateDisplay();
+    }
+
+    setPomodoro(withTime=true){
+        const pomodoroStatus = document.getElementById('navbarDropdown');
+        if (withTime) {
+            this.time = this.pomodoroTime;
+            // this.showMessage('Pomodoro');
+            pomodoroStatus.textContent = 'Pomodoro'
+            
+        }
+        this.endMessage = 'Pomodoro completed! Take a break';
+        if(this.intervalCount >= this.maxIntervalCount){
+            this.mode = 'longBreak';
+        }else{
+            this.mode = 'break';
+        }
+    }
+
+    setBreak(withTime=true){
+        const pomodoroStatus = document.getElementById('navbarDropdown');
+        console.log(pomodoroStatus.textContent)
+        if (withTime) {
+            this.time = this.breakTime;
+            // this.showMessage('Break');
+            pomodoroStatus.textContent = 'Break';
+        }
+        this.endMessage = 'Break time is over! Get back to work';
+        this.mode = 'pomodoro';
+    }
+
+    setLongBreak(){
+        const pomodoroStatus = document.getElementById('navbarDropdown');
+        // this.showMessage('Long break');
+        pomodoroStatus.textContent = 'Long Break';
+        this.time = this.longBreakTime;
+        this.endMessage = 'Long break time is over! Get back to work';
+        this.mode = 'pomodoro';
+    }
+
+    startTimer() {
+        this.startIcon = document.getElementById('start-icon');
+        this.isRunning = true;
+        const finished = this.time == 0;
+        if (this.mode === 'pomodoro') { 
+            this.setPomodoro(finished);
+        } else if (this.mode === 'break') {
+            this.setBreak(finished);
+        } else {
+            this.setLongBreak(finished);
+        }
+        this.timerInterval = setInterval(() => {
+            if (this.time > 0) {
+                this.time--;
+            } else {
+                this.showMessage(this.endMessage);
+                this.intervalCount++;
+                this.startIcon.classList.replace('fa-pause', 'fa-play');
+                this.stopTimer();
+            }
+            this.updateDisplay();
+        }, 1000);
+    }
+
+    stopTimer() {
+        this.isRunning = false;
+        clearInterval(this.timerInterval);
+    }
+
+    updateDisplay() {
+        const timerDisplay = document.getElementById('pomodoro-timer');
+        const timerStatus = document.getElementById('pomodoro-status');
+
+        const minutes = Math.floor(this.isRunning ? this.time / 60 : this.time / 60);
+        const seconds = this.isRunning ? this.time % 60 : this.time % 60;
+        timerDisplay.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        
+    }
+
+    showMessage(message) {
+        const messageDisplay = document.getElementById('pomodoro-message');
+
+        messageDisplay.innerHTML = `<p class = "align-self-center mb-0">${message}</p>`;
+
+    }
+}
+
+const pomodoro = new PomodoroTimer();
 

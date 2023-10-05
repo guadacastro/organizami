@@ -17,6 +17,7 @@
 }
 
 
+
 .x{
    padding-left: 5vw;
 }
@@ -29,6 +30,13 @@
         color: map-get($colors, orange);
     }
 
+}
+
+.navbar-nav .nav-item .nav-link.pomodoro-text {
+  color: map-get($colors, orange) ;
+  border: .5px solid rgb(0, 0, 0, .2);
+  border-radius: 5px;
+  padding: .5vh .5vw;
 }
 
 
