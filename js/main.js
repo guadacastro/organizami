@@ -25,10 +25,7 @@ class Task {
             const task = new Task(text);
             this.tasks.push(task);
             this.saveTasks();
-            return task;
-   
-
-   
+            return task;   
 
     }
 
@@ -214,7 +211,7 @@ class Task {
               task.toggleCompletion();
           });
       }
-  
+      taskList.saveTasks();
       updateTaskElements();
   }
   
