@@ -16,47 +16,84 @@ class Task {
     constructor() {
         // Intenta cargar las tareas desde el Local Storage
       this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+      this.loadTasks();
+     
     }
   
     addTask(text) {
-      const task = new Task(text);
-      this.tasks.push(task);
-      return task;
+
+            const task = new Task(text);
+            this.tasks.push(task);
+            this.saveTasks();
+            return task;
+   
+
+   
+
+    }
+
+    loadTasks() {
+        this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+        this.tasks = this.tasks.map(taskData => {
+            const task = new Task(taskData.text);
+            task.completed = taskData.completed;
+            return task;
+        })
+
+        this.tasks.forEach(task => {
+            createTaskElement(task);
+        })
+        // this.tasks.forEach( taskData => {
+        //     const task = new Task(taskData.text);
+        //     task.completed = taskData.completed;
+        //     createTaskElement(task);
+        // });
+
+
     }
   
     removeTask(task) {
       const index = this.tasks.indexOf(task);
       if (index !== -1) {
         this.tasks.splice(index, 1);
+        taskList.saveTasks();
       }
-      taskList.saveTasks();
+
+      console.log(taskList)
     }
 
     saveTasks() {
-        localStorage.setItem('tasks', JSON.stringify(this.tasks));
+        const updatedTasks = this.tasks.map(task => ({
+            text: task.text,
+            completed: task.completed
+        }));
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     }
 
   }
   
  
-
   const input = document.getElementById('input-task');
   const taskList = new TodoList();
 
   document.addEventListener('DOMContentLoaded', function() {
-    this.taskList = new TodoList();
 
-    this.taskList.tasks.forEach(task => {
-        createTaskElement(task);
+
+    // this.taskList = new TodoList();
+    // this.taskList.tasks.forEach(task => {
+    //     createTaskElement(task);
+    // });
+
+    input.addEventListener("keyup", function (event) {
+        if (event.key === "Enter") {
+            addTask();
+        }
     });
 
 })
   
-  input.addEventListener("keyup", function (event) {
-      if (event.key === "Enter") {
-          addTask();
-      }
-  });
+
   
   function addTask() {
       const textInput = input.value;
@@ -64,14 +101,17 @@ class Task {
       if (textInput === '') {
           alert('Write something first!');
       } else {
-          const task = taskList.addTask(textInput);
+          let task = new Task(textInput);
+          task = taskList.addTask(textInput);
+          taskList.saveTasks();
+          console.log(task)
           createTaskElement(task);
           input.value = '';
 
           console.log('[+] Tarea creada: ', task); 
       }
 
-      taskList.saveTasks();
+
       
   }
 
@@ -104,7 +144,21 @@ class Task {
   
       let p = document.createElement('p');
       p.textContent = task.text;
-      p.classList.add('task-text', task.completed ? 'completed' : 'incomplete', 'black');
+    //   p.classList.add('task-text', task.completed ? 'completed' : 'incomplete', 'black');
+    p.classList.add('task-text', 'black');
+
+    if (task.completed) {
+        p.classList.add('completed');
+        icon1.classList.add('fa-circle-check');
+        icon1.classList.remove('fa-circle'); 
+        icon1.classList.replace('black', 'orange');
+        p.classList.replace('black', 'orange'); 
+        
+    } else {
+        p.classList.add('incomplete');
+    }
+    
+
   
       const icon2 = document.createElement('i');
       icon2.classList.add('fa-solid', 'fa-xmark', 'circle', 'orange', 'icon-size');
@@ -113,18 +167,23 @@ class Task {
       taskRow.appendChild(p);
       taskRow.appendChild(icon2);
       taskItem.append(taskRow);
+
+      function handleCompletedButtonClick() {
+        console.log('estoy antes del togglecompletion() y el task es:', task)
+        console.log('tipo:' ,typeof(task))
+        task.toggleCompletion();
+        p.classList.toggle('completed');
+        p.classList.toggle('incomplete');
+        icon1.classList.toggle('fa-circle');
+        icon1.classList.toggle('fa-circle-check');
+        p.classList.toggle('black');
+        p.classList.toggle('orange');
+        icon1.classList.toggle('black');
+        icon1.classList.toggle('orange');
+        taskList.saveTasks();
+      }
   
-      icon1.addEventListener('click', function () {
-          task.toggleCompletion();
-          p.classList.toggle('completed');
-          p.classList.toggle('incomplete');
-          icon1.classList.toggle('fa-circle');
-          icon1.classList.toggle('fa-circle-check');
-          p.classList.toggle('black');
-          p.classList.toggle('orange');
-          icon1.classList.toggle('black');
-          icon1.classList.toggle('orange');
-      });
+      icon1.addEventListener('click', handleCompletedButtonClick);
   
       icon2.addEventListener('click', function () {
           taskList.removeTask(task);
