@@ -57,14 +57,42 @@
     </header>
 
     <main>
-        <div class="container-fluid">
-            <div class="col-xl-1 red">
+        <div class="container-fluid d-flex">
+            <div class="col-xl-1">
                 <li>
-                    <ul>Daily</ul>
-                    <ul>Weekly</ul>
-                    <ul>Monthly</ul>
-                    <ul>Year Goals</ul>
+                    <ul class="selected " id="daily-button"> Daily</ul>
+                    <ul class="" id="weekly-button">Weekly</ul>
+                    <ul id="monthly button">Monthly</ul>
+                    <ul id="'year-button">Year Goals</ul>
                 </li>
+            </div>
+            <div class="col-xl-11">
+                <div class="container d-flex flex-column justify-content-center text-center">
+                    <h1 class="subtitle orange text-start">Daily Tasks</h1>
+                    <div class="d-flex gap-5 justify-content-center p-5">
+                        <div class="col-xl-auto ">
+                            <input class="input-task " type="text" id="input-task" placeholder="Enter your text here...">
+                        </div>
+                        <div class="col-xl-auto d-flex justify-content-start button-add-task-container">
+                            <button class="add-task" onclick="addTask()">
+                                <i class="plus-circle fa-solid fa-circle-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="container add-task-container d-flex ">
+                        <div class="col-xl-1 ">
+                            <button class="add-task m-2 d-none" onclick="checkAll()" id="select-all-button" >
+                                <i class="select-all-unchecked plus-circle fa-regular fa-circle" id="select-all"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="task-list" class="container tasks-container d-flex flex-column justify-content-center  flex-nowrap mt-5 mb-5  ">
+            
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
     </main>

@@ -11,6 +11,14 @@
 }
 
 
+.selected {
+    font-weight: bold;
+    color: map-get($colors, light-salmon);
+    background-color: rgb(128, 128, 128, 0.08);
+    border-radius:5px;
+}
+
+
 .red {
     background-color: red;
 }

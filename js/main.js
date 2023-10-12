@@ -256,8 +256,9 @@ class PomodoroTimer {
         this.updateDisplay();
 
         // botones
+        // this.startText = document.getElementById('start-text');
         this.startButton = document.getElementById('start-button');
-        
+        this.startIcon = document.getElementById('start-icon');
         this.resetButton = document.getElementById('reset-button');
 
         // eventos
@@ -266,14 +267,14 @@ class PomodoroTimer {
     }
 
     toggleTimer() {
-        this.startIcon = document.getElementById('start-icon');
-        
+
         if (!this.isRunning) {
             this.startIcon.classList.replace('fa-play', 'fa-pause');
-            
+            // this.startText.textContent = 'Pause';
             this.startTimer();
         } else {
             this.startIcon.classList.replace('fa-pause', 'fa-play');
+            // this.startText.textContent = 'Play';
             this.stopTimer();
         }
     }

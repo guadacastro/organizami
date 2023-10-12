@@ -61,6 +61,13 @@
   color: white;
 }
 
+.selected {
+  font-weight: bold;
+  color: #FF7777;
+  background-color: rgba(128, 128, 128, 0.08);
+  border-radius: 5px;
+}
+
 .red {
   background-color: red;
 }
