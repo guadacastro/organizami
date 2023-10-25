@@ -69,18 +69,21 @@
 }
 
 .weather-icon {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
 }
 
 .location-text {
   font-family: "Roobert";
-  font-size: 1.5rem;
+  font-size: 1rem;
+  white-space: nowrap; /* Evita el salto de línea del texto */
+  overflow: hidden; /* Recorta el texto que no cabe en el contenedor */
+  text-overflow: ellipsis;
 }
 
 .temperature-text {
   font-family: "Rebond Grotesque";
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: bold;
 }
 

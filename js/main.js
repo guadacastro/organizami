@@ -329,7 +329,7 @@ class PomodoroTimer {
             // this.showMessage('Break');
             pomodoroStatus.textContent = 'Break';
         }
-        this.endMessage = 'Break time is over! Get back to work';
+        // this.endMessage = 'Break time is over! Get back to work';
         this.mode = 'pomodoro';
     }
 
@@ -338,7 +338,7 @@ class PomodoroTimer {
         // this.showMessage('Long break');
         pomodoroStatus.textContent = 'Long Break';
         this.time = this.longBreakTime;
-        this.endMessage = 'Long break time is over! Get back to work';
+        // this.endMessage = 'Long break time is over! Get back to work';
         this.mode = 'pomodoro';
     }
 
@@ -357,7 +357,7 @@ class PomodoroTimer {
             if (this.time > 0) {
                 this.time--;
             } else {
-                this.showMessage(this.endMessage);
+                // this.showMessage(this.endMessage);
                 this.intervalCount++;
                 this.startIcon.classList.replace('fa-pause', 'fa-play');
                 this.stopTimer();
