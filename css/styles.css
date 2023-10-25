@@ -68,6 +68,31 @@
   border-radius: 5px;
 }
 
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.location-text {
+  font-family: "Roobert";
+  font-size: 1.5rem;
+}
+
+.temperature-text {
+  font-family: "Rebond Grotesque";
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.description-text {
+  font-family: "Roobert";
+  font-size: 1.5rem;
+}
+
+.weather-container {
+  order: 1;
+}
+
 .red {
   background-color: red;
 }

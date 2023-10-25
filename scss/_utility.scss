@@ -18,8 +18,30 @@
     border-radius:5px;
 }
 
+.weather-icon {
+    width: 100px;
+    height: 100px;
+}
 
+.location-text {
+    font-family: map-get($font-families, subtitle);
+    font-size: map-get($font-sizes, text);
+}
 
+.temperature-text {
+    font-family: map-get($font-families, title);
+    font-size: map-get($font-sizes, big-text);
+    font-weight: bold;
+}
+
+.description-text {
+    font-family: map-get($font-families, subtitle);
+    font-size: map-get($font-sizes, text);
+}
+
+.weather-container {
+    order: 1;
+}
 
 
 .red {
