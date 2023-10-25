@@ -15,7 +15,7 @@ function getLocation() {
 
 }
 
-function getWeather(latitude, longitude) {
+ function getWeather(latitude, longitude) {
     return new Promise(function (resolve, reject) {
         const apiKey = 'ba0c6186592e59a1197ded18b1d68956';
         const apiUrl = 'https://api.openweathermap.org/data/2.5/weather?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey + '&units=metric';
