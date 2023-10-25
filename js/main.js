@@ -1,9 +1,9 @@
 
 // Objeto Task para representar una tarea
 class Task {
-    constructor(text) {
+    constructor(text, completed = false) {
       this.text = text;
-      this.completed = false;
+      this.completed = completed;
     }
   
     toggleCompletion() {
@@ -33,9 +33,7 @@ class Task {
         this.tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
         this.tasks = this.tasks.map(taskData => {
-            const task = new Task(taskData.text);
-            task.completed = taskData.completed;
-            return task;
+            return new Task(taskData.text, taskData.completed);
         })
 
         this.tasks.forEach(task => {
@@ -75,8 +73,8 @@ class Task {
   const taskList = new TodoList();
   const addTaskButton =  document.getElementById('add-task-button');
   const selectAllButton = document.getElementById('select-all-button');
-  addTaskButton.addEventListener('click', addTask());
-  selectAllButton.addEventListener('click', checkAll());
+  addTaskButton.addEventListener('click', addTask);
+  selectAllButton.addEventListener('click', checkAll);
 
   document.addEventListener('DOMContentLoaded', function() {
 
@@ -100,14 +98,17 @@ class Task {
       const textInput = input.value;
       
       if (textInput !== '') {
-        let task = new Task(textInput);
+        let task = taskList.addTask(textInput);
         task = taskList.addTask(textInput);
         taskList.saveTasks();
         console.log(task)
-        createTaskElement(task);
-        input.value = '';
+        if (task) {
+            createTaskElement(task);
+            input.value = '';
 
-        console.log('[+] Tarea creada: ', task); 
+            console.log('[+] Tarea creada: ', task); 
+        }
+
           
       }
 
