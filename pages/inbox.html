@@ -60,9 +60,9 @@
         <div class="container-fluid d-flex">
             <div class="col-xl-1">
                 <li>
-                    <ul class="selected " id="daily-button"> Daily</ul>
+                    <ul class="selected">Daily</ul>
                     <ul class="" id="weekly-button">Weekly</ul>
-                    <ul id="monthly button">Monthly</ul>
+                    <ul id="monthly-button">Monthly</ul>
                     <ul id="'year-button">Year Goals</ul>
                 </li>
             </div>
@@ -74,14 +74,14 @@
                             <input class="input-task " type="text" id="input-task" placeholder="Enter your text here...">
                         </div>
                         <div class="col-xl-auto d-flex justify-content-start button-add-task-container">
-                            <button class="add-task" onclick="addTask()">
+                            <button class="add-task" id="add-task-button">
                                 <i class="plus-circle fa-solid fa-circle-plus"></i>
                             </button>
                         </div>
                     </div>
                     <div class="container add-task-container d-flex ">
                         <div class="col-xl-1 ">
-                            <button class="add-task m-2 d-none" onclick="checkAll()" id="select-all-button" >
+                            <button class="add-task m-2 d-none" id="select-all-button" >
                                 <i class="select-all-unchecked plus-circle fa-regular fa-circle" id="select-all"></i>
                             </button>
                         </div>
@@ -90,18 +90,20 @@
             
                     </div>
                 </div>
-
-
-
+                
             </div>
+
         </div>
+
+
+
     </main>
 
     <footer class="orange-bg p-4" >
         <p class="copyright">&copy; Copyright 2023 organizami.com</p>
     </footer>
-
     <script src="../js/bootstrap.min.js" ></script>
     <script src="../js/main.js"></script>
+    <script src="../js/inbox.js" ></script>
 </body>
 </html>

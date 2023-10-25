@@ -73,6 +73,10 @@ class Task {
  
   const input = document.getElementById('input-task');
   const taskList = new TodoList();
+  const addTaskButton =  document.getElementById('add-task-button');
+  const selectAllButton = document.getElementById('select-all-button');
+  addTaskButton.addEventListener('click', addTask());
+  selectAllButton.addEventListener('click', checkAll());
 
   document.addEventListener('DOMContentLoaded', function() {
 
@@ -95,17 +99,16 @@ class Task {
   function addTask() {
       const textInput = input.value;
       
-      if (textInput === '') {
-          alert('Write something first!');
-      } else {
-          let task = new Task(textInput);
-          task = taskList.addTask(textInput);
-          taskList.saveTasks();
-          console.log(task)
-          createTaskElement(task);
-          input.value = '';
+      if (textInput !== '') {
+        let task = new Task(textInput);
+        task = taskList.addTask(textInput);
+        taskList.saveTasks();
+        console.log(task)
+        createTaskElement(task);
+        input.value = '';
 
-          console.log('[+] Tarea creada: ', task); 
+        console.log('[+] Tarea creada: ', task); 
+          
       }
 
 
@@ -244,9 +247,9 @@ class Task {
 
 class PomodoroTimer {
     constructor() {
-        this.pomodoroTime = 25 * 1; // 25 segundos
-        this.breakTime = 5 * 1; // 5 segundos
-        this.longBreakTime = 30 * 1; // 15 min en segundos
+        this.pomodoroTime = 25 * 60; // 25 segundos
+        this.breakTime = 5 * 60; // 5 segundos
+        this.longBreakTime = 30 * 60; // 15 min en segundos
         this.time = this.pomodoroTime; // tiempo actual
         this.mode = 'pomodoro'; // modo actual
         this.timerInterval = null;
