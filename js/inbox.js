@@ -44,7 +44,7 @@ $(document).ready(function () {
             console.log(data)
             
             locationElement.textContent = data.name;
-            temperatureElement.textContent = Math.round(data.main.temp) + '°C';
+            temperatureElement.textContent = data.main.temp.toFixed(1) + '°C';
             // descriptionElement.textContent = data.weather[0].description;
 
             const iconURL = 'https://openweathermap.org/img/wn/' + data.weather[0].icon + '@2x.png';
