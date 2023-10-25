@@ -25,16 +25,18 @@
 
 .location-text {
     font-family: map-get($font-families, subtitle);
-    font-size: 1rem;
+    font-size: 1.2rem;
     white-space: nowrap; /* Evita el salto de línea del texto */
     overflow: hidden;   /* Recorta el texto que no cabe en el contenedor */
     text-overflow: ellipsis;
+    align-self: center;
 }
 
 .temperature-text {
     font-family: map-get($font-families, title);
     font-size: map-get($font-sizes, text);
     font-weight: bold;
+    align-self: center;
 }
 
 .description-text {
