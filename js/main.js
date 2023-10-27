@@ -99,9 +99,7 @@ class Task {
       
       if (textInput !== '') {
         let task = taskList.addTask(textInput);
-        task = taskList.addTask(textInput);
         taskList.saveTasks();
-        console.log(task)
         if (task) {
             createTaskElement(task);
             input.value = '';
