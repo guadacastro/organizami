@@ -1,0 +1,15 @@
+
+.feature-title {
+    color: map-get($colors, salmon);
+    font-size: map-get($font-sizes, big-text );
+    font-family: map-get($font-families, title );
+    font-weight: bold;
+
+}
+
+.feature-description {
+    font-family: map-get($font-families, subtitle );
+    font-size: map-get($font-sizes, text );
+    margin-left: 2vw;
+    font-weight: bold;
+}

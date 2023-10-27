@@ -119,6 +119,10 @@
   background-color: #F14F24;
 }
 
+.b-salmon {
+  background-color: #FF7777;
+}
+
 main {
   min-height: calc(100vh - 100px); /* 100px es la altura estimada del encabezado y el espacio en blanco entre el contenido principal y el footer */
 }
@@ -490,4 +494,18 @@ footer {
   color: #FFFCF2;
   font-family: "Roobert";
   text-align: start;
+}
+
+.feature-title {
+  color: #EB7271;
+  font-size: 2rem;
+  font-family: "Rebond Grotesque";
+  font-weight: bold;
+}
+
+.feature-description {
+  font-family: "Roobert";
+  font-size: 1.5rem;
+  margin-left: 2vw;
+  font-weight: bold;
 }/*# sourceMappingURL=styles.css.map */

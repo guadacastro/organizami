@@ -69,7 +69,10 @@
 .b-orange {
     background-color: map-get($colors, orange ); ;
 }
-
+.b-salmon {
+    background-color: map-get($colors, light-salmon ); 
+    
+}
 main {
     min-height: calc(100vh - 100px); /* 100px es la altura estimada del encabezado y el espacio en blanco entre el contenido principal y el footer */
 }
